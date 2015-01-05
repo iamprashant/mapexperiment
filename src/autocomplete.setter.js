@@ -47,12 +47,12 @@
                     var temp = place.formatted_address.split(",");
                     switch(temp.length) {
                         case 2:
-                            state = city;
-                            country = temp[1].trim(); 
+                            state = city.replace( /[^\a-zA-z .]/g, '' );;
+                            country = temp[1].trim().replace( /[^\a-zA-z .]/g, '' );; 
                             break;
                         case 3:
-                            state = temp[1].trim();
-                            country = temp[2].trim();
+                            state = temp[1].trim().replace( /[^\a-zA-z .]/g, '' );;
+                            country = temp[2].trim().replace( /[^\a-zA-z .]/g, '' );;
                             break;
                     }
 
